@@ -6,25 +6,22 @@ const { off } = require("process");
 let input = fs.readFileSync("../input.txt").toString().split("\n"); ///dev/stdin
 
 let T = input[0];
-let output = "";
+function getBinaryNumber(n) {
+  cn = 0;
+  let output = 0;
 
-function getBinaryNumberArray(n) {
-  let arr = [];
-  let binaryString = parseInt(n).toString(2);
-  for (i = 0; i < binaryString.length; i++) {
-    arr.push(parseInt(binaryString.substring(i, i + 1)));
+  while (n > 0) {
+    if (n % 2 === 1) {
+      output = output + cn + " ";
+    }
+    n = parseInt(n / 2);
+    cn = cn + 1;
   }
-  return arr;
+  return output;
 }
 
 for (i = 1; i <= T; i++) {
   let n = input[i];
-  let outputArr = getBinaryNumberArray(n).reverse();
-  for (i = 0; i < outputArr.length; i++) {
-    if (outputArr[i] === 1) {
-      output = output + i + " ";
-    }
-  }
+  let output = getBinaryNumber(n);
+  console.log(output);
 }
-
-console.log(output);
