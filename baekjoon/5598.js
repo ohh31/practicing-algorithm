@@ -1,7 +1,7 @@
 const { Console } = require("console");
 let fs = require("fs");
 const { off } = require("process");
-let input = fs.readFileSync("../input.txt").toString().split("\n"); ///dev/stdin
+let input = fs.readFileSync("./input.txt").toString().split("\n"); ///dev/stdin
 
 const word = input[0];
 
