@@ -1,5 +1,4 @@
-4
-PPPP
-CYZY
-CCPY
-PPCC
+3 6
+antarctica
+antahellotica
+antacartica
